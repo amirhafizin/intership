@@ -1,0 +1,66 @@
+---
+title: " Report of Task in NOVOCRAFT TECHNOLOGY"
+author: "Muhamad Amir Hafizin"
+date: '`r format(Sys.Date(),"%d %B, %Y")`'
+output:
+   slidy_presentation:
+html_document:
+pdf_document:
+theme: united
+---
+
+
+# Basic Info of Task/Assigment given
+* Doing the Rmarkdown of the daily schedule 
+* Doing the basic Bash script pipeline that include the bash novoalign,novosort and samtools
+* Doing the IGV and Qualimap quality check of the mapped SAM file
+* Compare the mapped area of the Novoalign against ART
+* Compare the mapped area of Novoalign against ART and BWA against ART
+* Get the each chromosome of TAIR10 of ART,Novoalign and BWA.
+* Compare the Novoalign and BWA for each Chromosome
+
+
+# The Tool used
+* R language
+* Bash
+* AWK
+* Perl (perl scriptome)
+* Novoalign
+* Novosort
+* Samtools
+* IGV
+* Qualimap
+* Bfctools
+* Bedtools
+* ART
+
+
+# Challange
+* Lacking knowlegde of the markdown format
+* Lacking the knowledge of scripting (only basic scripting)
+* Lacking knowlegde of most tools use.
+
+
+
+# Outcome
+* Produce a Rmarkdown file that can be output as PDF,HTML and slide presentation
+* Produce a Basic bash script for the pipeline that contain the work from Novoalign,Novosort and Samtools
+* Generated the simulation sequence by using ART
+* Produce a mapped area by using the Novoalign
+* Produce a qualimap comparesion between threshold o-150 for Novoalign
+* Finding the location of empty mapped area in the chromosome 5 by using the IGV
+* Produce a bedfile for SAM file for both ART and Novoalign
+* Get the number of of lines of mapped area using Samtools and AWK
+* Produce a mapped area by using the BWA
+* Produce a merge between Novoalign with ART, and BWA with ART
+* Get each chromosome of TAIR10 from the SAM file of Novoalign,BWA and ART
+
+
+# Example
+* Daily schedule rmarkdown (markdown format)[link](http://127.0.0.1:5347/report1.Rmd)
+* Daily schedule slide presentation and pdf [link](/export/home/amirh/report_weekly/task_1/report1.html)
+* Basic pipeline using bash [link] (/export/home/amirh/genome_dataset/mutation_scanning/script/try.sh)
+* Slide presentation contain the infomation of Novoalign versus Art [link](file:///export/home/amirh/novoalign_testing/test/average.html#%282%29)
+* Qualimap of Novoalign and BWA [link](/export/home/amirh/novoalign_testing/withr/psorted150.bam_stats/qualimapReportOutsideRegions.html)
+* Slide presentation of the Novoalign with ART and BWA with ART. [link](/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/mapped.rmd)
+* Slide presentation of of each chromosome of Novoalign with ART and BWA with ART [link](/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/differencechr.rmd)
