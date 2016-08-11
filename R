@@ -1,0 +1,28 @@
+a<-read.csv("123.csv",header=FALSE)
+b<-a[1,]
+c<-a[2,]
+revtrunc<-function(x){x-floor(x)}
+d<-(b*500)/c
+e<-apply(d,1,function(x) trunc(x))
+f<-apply(d,1,function(x) revtrunc(x)*60)
+g<-apply(f,1,function(x) trunc(x))
+h<-paste(e,g,sep=".")
+i<-as.numeric(h)
+j<-i*5
+cat(j,sep="\n")
+
+
+
+a<-read.csv("123.csv",header=FALSE)
+b<-apply(a,2,mean)
+cat(b,sep="\n")
+
+
+
+a<-read.csv("123.csv",header=FALSE)
+revtrunc<-function(x){x-floor(x)}
+b<-apply(a,1,function(x) trunc(x))
+c<-apply(a,1,function(x) revtrunc(x)*60)
+d<-apply(c,1,function(x) trunc(x))
+e<-paste(b,d,sep=".")
+cat(e,sep="\n")

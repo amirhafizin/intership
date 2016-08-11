@@ -1,0 +1,49 @@
+```
+```
+# NOVOALIGN BASIC MANUAL
+
+###NOVOALIGN
+
+Novoalign is use to align the fasta/fastq(sequence) file to the refence genome to get the number of sequence that is related with the reference genome.
+
+### Basic command 
+
+novoalign <option> <-d indexfile> <-f sequencefile> <-o outputfile>
+
+### Option
+-c <digit>
+set the thread for number of cpu use. if not use the default will use maximun number of thread/cpu available
+-t <digit>
+set the threshold. threshold is use for use to define the alignment score that is acceptable be use score in mapped in output file.
+-o 
+set the format of the output file either native of sam.
+-a
+strip the -3 adapter region before the align
+-r
+for reporting the multimapped into the bam file. Can be selected to either <All> <None> <Random>
+
+### Example
+
+novoalign -c 5 -t 60 -d thaliana.idx -f seq.fq seq2.fq -o full.sam
+
+*****
+
+
+# NOVOINDEX
+
+novoindex is to index the reference genome so it can be use as refence genome when align process is invoke.
+
+### Basic command
+
+novoindex <option> <name_of_indexfile.idx> <name_of_reference_genome>
+
+### Option
+
+-k <number> 
+the k is to set the k-mer of the reference.k-mer is to set the length of sting  of the of the index file.(optional)
+-s <number>
+the s is to set the step size of index reference.(optional)
+
+### Example
+
+novoindex thaliana.idx arabidopsis_thaliana.TAIR10.fq
