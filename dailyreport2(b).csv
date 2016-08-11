@@ -1,0 +1,97 @@
+Date,Time,Workdone,Toolused
+30/5/2016,8.30-10.30, understand how bwa work,bwa
+30/5/2016,10.30-12.30,get the fq data fom the ART to be align by using bwa aligner,bwa
+30/5/2016,2.30-5.30,produce aqualimap of the result to compare against the novoalign,qualimap
+31/5/2016,8.30-12.30,remove the N from the sequence data, vim reference sequence
+31/5/2016,2.30-5.30,doing everthing from the ART and alignment, ART novoalign and bwa
+1/6/2016,8.30-10.30,produce a igv and qulimap of the alignment file,IGV and QUALIMAP
+1/6/2016,10.30-12.30,scanning the result for the similirty of difference between this alignment and pervious alignment, IGv and qualimap
+1/6/2016,2.30-5.30,find why the mapping quality across reference stay the same for chromosome1 even after N been remove, iceweasel
+2/6/2016,8.30-12.30,produce new bwa with the mismatch treshold from the research paper, bwa
+2/6/2016,2.30-5.30,produce new  novoalign file with mismatch treshold from the research paper
+3/6/2016,-,medical leave,-
+6/6/2016,8.00-11.30,half-day leave,-
+6/6/2016,12.00-5.00,produce a qualimap and igv based on the new bwa and novoalign,igv and qualimap
+7/6/2016,8.00-12.00,produce a a comparision between bwa and novoalign and original ART, qualimap and csv
+7/6/2016,12.00-5.00,compare the result and find out why,csv and qualimap
+8/6/2016,8.00-12.00,produce a table of versus between BWA and Novoalign,csv
+8/6/2016,12.00-5.00,produce a rmd file to show the table for each of the rmd
+9/6/2016,8.00-12.00,produce a bed file for each of the BWA and novoalign file,bedtools
+9/6/2016,12.00-5.00,understand how bedtoools work,bedtools
+10/6/2016,8.00-12.30,produce and intersect of the Bwa with ART and Novo with ART,bedtools
+10/6/2016,2.30-5.00,inspect and analysis the bedtools output, bedtools
+13/6/2016,8.00-12.00,analysis the intersect output of novo with art,bedtools
+13/6/2016,12.00-5.00,analysis the intersect output of bwa with art,bedtools
+14/6/2016,8.00-12.00,analysis the subtract of art with novo and bwa, bedtools
+14/6/2016,12.00-5.00,analysis the differenct of intersect output of art with bwa and novo,bedtools
+15/6/2016,8.00-12.00,using perl to merge the intersect data according to the id group,perl
+15/6/2016,12.00-5.00,using the awk to get the result of the merge file to be read,awk
+16/6/2016,8.00-12.00,using ART and novoalign to get to cigar result,ART and novoalign
+16/6/2016,12.00-3.00,using the samtool and bedtools to get the bedfile for novoalign and ART file,samtool and bedtools
+16/6/2016,3.00-5.00,using perl to merge the intersect data according to the id group,perl
+17/6/2016,8.00-12.30,using awk to get the data of the mapped area of the art and novoalign,terminal and awk
+17/6/2016,2.30-5.00,calculate the percent of the mapped region of the novoalign mapped,awk
+20/6/2016,8.00-12.00,tabulate the art with novo and art with also novo with art,libra
+20/6/2016,12.00-5.00,produce the rmarkdown file that contain the data for easy to view,rmarkdown
+21/6/2016,8.00-12.00,get the each of the of the chromosome from the nova,awk
+21/6/2016,12-5.00,get the each of the chromosome from the BWA,awk
+23/6/2016,8.00-12.00,get each of the chromosome from the ART, awk
+23/6/2016,12.00-5.00,get each chromosome difference between novo and ART,awk
+24/6/2016,8.00-11.00,using the perl to merge the each chromosome of NOVOALIGN with ART,perl
+24/6/2016,11.00-5.00,using the AWK to get the result from each of the chromosome,AWK
+27/6/2016,8.00-12.00,tabulate the data from AWK result into the table,libra
+27/6/2016,12.00-5.00,Analysisi the data and calculate their percentage,libra
+28/6/2016,8.00-11.00,using perl to merge the each chromosome of BWA with ART,perl
+28/6/2016,11.00-5.00,using the AWK to get the result from each of the chromosome,AWK
+29/6/2016,8.00-12.00,tabulate the data from AWK result into the table,libra
+29/6/2016,12.00-5.00,Analysisi the data and calculate their percentage,libra
+30/6/2016,8.00-12.00,produce the rmarkdown file for each chromosome result,rmarkdown
+30/6/2016,12.00-5.00,get the data for Novo using t90-110 for comparision,novoalign
+4/7/2016,-,on leave raya,-
+5/7/2016,-,on leave raya,-
+6/7/2016,-,raya,-
+7/7/2016,-,raya,-
+8/7/2016,-,on leave,-
+11/7/2016,-,on leave,-
+12/7/2016,8.30-12.30,using the perl to merge each chromsome of t100-110 with ART,perl
+12/7/2016,2.30-5.30,using the awk to get the result for each chromosome of t90-100,AWK
+13/7/2016,8.30-12.30,using the AWK to get the result for each chromosome of t100-110,AWK
+13/7/2016,2.30-5.30, tabulate the data from the AWK result into the table,libra
+14/7/2016,8.00-12.30,calculate the percentage of the result from the AWK,libra
+14/7/2016,2.30-5.30,Analysis the result oRf the data 
+15/7/2016,8.00-12.30,Produce the rmarkdown file for Novoalign with ART and BWA with ART for each chromosome,rmarkdown
+15/7/2016,2.30-5.30,finish the slide and prepared for the presentation for next week,libra
+17/7/2016,8.30-12.30, Produce a simulated paired end fastq from the region of CHR22 of Human Chromosome by using the ART,ART
+17/7/2016,2.30-5.30, Produce a simulated single end fastq from the region of CHR22 of Human Chromosome by using the ART,ART
+18/7/2016,8.30-12.30,learning the about Perl,iceweasel
+18/7/2016,2.30-3.30, presentation of the slide,rmarkdown
+18/7/2016,3.30-5.30,The rmarkdown and table need to done again due to the word use,rmakrdown and libra
+19/7/2016,8.30-12.30, Produce a simulated paired end fastq from the region of CHR22 of Human Chromosome by using the ART (change the nameset),ART
+19/7/2016,2.30-5.30, Produce a simulated single end fastq from the region of CHR22 of Human Chromosome by using the ART (change the nameset),ART
+20/7/2016,8.30-10.30,calculate and analysis for each chromosome again due to data to be contain the duplication,libra and AWK
+20/7/2016,10.30-12.30,redone the experiment for novo for the chromosome 1,2 and 3 for -t 154 because to see if duplication or wrong calculation,novoalign
+20/7/2016,2.30-5.30,merge with art and using AWk to get the result for the redone calculation,perl and AWK
+21/7/2016,8.30-10.30,Analysis the the result to check the duplicatain,libra
+21/7/2016,10.30-12.30,learning the graph in R especially venn diagram,R
+21/7/2016,2.30-5.30,finding the merge between Novoalign and BWA for acceptable range for basepair location,perl
+22/7/2016,8.30-12.30,making the venn diagram for the acceptable range, R
+22/7/2016,2.30-5.30,making the slide presentation again for the presentation
+25/7/2016,8.30-12.30,study XPATH on w33school,iceweasel
+25/7/2016,2.30-5.30,presentation of the slide,rmarkdown
+26/7/2016,8.30-12.30,finding the merge between Novoalign and BWA for exectly mapped,perl
+26/7/2016,2.30-5.30,making the venn diagram for the exectly mapped, R
+28/7/2016,-,medical leave,-
+29/7/2016,8.30-12.30,study MYSQL on w33shool,iceweasel
+29/7/2016,2.30-5.30,Analysis the venn diagram and rmarkdown file,rmarkdown and R
+1/8/2016,8.30-12.30,produce the slide presentation again for the presentation
+1/8/2016,2.30-5.30,presentation of the slide of venn diagram, Rmarkdown
+2/8/2016,8.30-12.30,calculate the presentation of the of the acceptable range of basepair location and exectly match of Novo and BWA with ART,AWK
+2/8/2016,2.30-5.30,analysis the result and making the venn diagram in the rmarkdown,R
+3/8/2016,8.30-12.30,redone the slide of the of the rmarkdown that contain venn diagram,rmarkdown
+3/8/2016,2.30-5.30,learning the python,iceweasel
+4/8/2016,8.30-12.30,done the rmarkdown for the entire task done during the intership,rmarkdown
+4/8/2016,2.30-5.30,finish the rmarkdown slide for the end of project and report of the intern,rmarkdown
+5/8/2016,8.30-12.30,learn about grinder,iceweasel
+5/8/2016,2.30-5.30,finish everthing and present the final presentation and report,rmarkdown
+8/8/2016,learning the SDL and Perl,iceweasel
+

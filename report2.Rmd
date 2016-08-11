@@ -1,0 +1,127 @@
+---
+title: " Weekly Report"
+author: "Muhamad Amir Hafizin"
+date: '`r format(Sys.Date(),"%d %B, %Y")`'
+runtime: shiny
+output:
+   html_document:
+   pdf_document:
+slidy_presentation:
+toc: true
+theme: united
+---
+
+# Task
+* Learning about the Novoalign 
+* Learning how to use Novoalign from terminal
+* Understand basic command of Novoalign and Novoindex
+* Learning how to make basic pipeline
+* Learning how to use ART (simulation tools to generate synthetic next-generation sequencing reads)
+* Learning NovoClinic
+* Learning about Samtools and Novosort
+* Learning how to produce synthetic dataset using ART
+* Learning using Qualimap and IGV as quality check tool
+* Learning how to use Bedtools suite that consist many thing.
+* Finding the how to optimize the novoalign based on plant model
+
+
+# Learning Point
+* Introduction of AWK
+* Introduction of Novoalign
+* Introduction to Novoindex
+* Introduction to BWA
+* Introduction to Samtools
+* Introduction to Novosort
+* Introduction to Novoindex and Novoalign command-line
+* Introduction to pipeline 
+* Introduction to Novoclinic
+* Introduction to ART
+* Introduction to Qualimap
+* Introduction to IGV(interactive Genomic Viewer)
+* Introduction to Bedtools 
+* Produce each of the chromosome from the mapped file
+* 
+
+# Objecktive
+* Use the reseach paper that use novoalign that based on two model organism in plant Zee Mays and Arabidopsis thaliana and that to use the novoalign the way their us and optimize it
+* Testing the novoclinic for it Usability and problem
+* Testing the how the performance of the novoalign when changing the parameter threshold(-t)
+* Finding the different between the novoalign and BWA based on the same missmatch (based on reseacrh paper)
+* Using the samtool to get the each chromosome from the Sam file
+* Finding the different between mapped region of Novoalign and BWA for each chromosome
+
+# Outcome
+* Enable to use Novoindex and Novoalign from the terminal
+* Enable to use the BWA from the terminal
+* Enable to produce basic pipeline that contain Novoindex,Novoalign,Novosort and Samtools
+* Enable to use novoclinic and identify few problem related to it usability
+* Enable to produce a optimization of the Novoalign for Arabidopsis Thaliana (TAIR 10)
+* Produce a Qualimap of each threshold of Novoalign and BWA.
+
+# Daily Report
+```{r, echo= FALSE, results="asis"}
+tab= read.csv("dailyreport2.csv",header=TRUE)
+knitr::kable(tab)
+```
+
+*****
+# Select date of intern
+<!---for the table selected of daily schedule using shiny-->
+```{r,echo = FALSE,if (output= pdf_document){include=FALSE} else {include=TRUE}
+library(shiny)
+report <-read.csv("dailyreport2.csv",header=TRUE)
+shinyApp(
+ui <- fluidPage(
+selectInput("Date","Choose Date",
+c(unique(as.character(report$Date)))),
+dataTableOutput("result")
+),
+
+server = function(input,output){
+output$result <- renderDataTable({
+report <- read.csv("dailyreport2.csv",header=TRUE)
+report <- report[report$Date == input$Date,]
+})
+},
+)
+
+```
+
+```(echo=TRUE)
+* download the file from maize genome database as reference
+* download the file fron ena website based on SRA number
+* unzip all
+* index the ref genome	
+* align the file	
+```
+
+# Daily Report
+```{r, echo= FALSE, results="asis"}
+tab= read.csv("dailyreport2(b).csv",header=TRUE)
+knitr::kable(tab)
+```
+
+*****
+# Select date of intern
+<!---for the table selected of daily schedule using shiny-->
+```{r,echo = FALSE,if (output= pdf_document){include=FALSE} else {include=TRUE}
+library(shiny)
+report <-read.csv("dailyreport2(b).csv",header=TRUE)
+shinyApp(
+ui <- fluidPage(
+selectInput("Date","Choose Date",
+c(unique(as.character(report$Date)))),
+dataTableOutput("result")
+),
+
+server = function(input,output){
+output$result <- renderDataTable({
+report <- read.csv("dailyreport2.csv",header=TRUE)
+report <- report[report$Date == input$Date,]
+})
+},
+)
+
+```
+
+

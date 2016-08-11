@@ -1,0 +1,78 @@
+Date,Time,Workdone,Toolused
+18/4/2016,8.30-10.30,finding research paper that use novoalign on two model organism Zea may and Arabidopsis thaliana,iceweasel
+18/4/2016,10.30-12.30,finding related genome/gene that related to the journal that been use with novoalign,iceweasel
+18/4/2016,2.30-5.30,download the related genome/gene and download the SRA toolkit to be use,iceseasel and terminal
+19/4/2016,8.30-10.30,using wget download the SRA of the related genome that linked too paper,bash script
+19/4/2016,10.30-12.30,produce bash script to download/unzip and combine the sra file,bash script
+19/4/2016,2.30-5.30,run the fastqc/novoindex and novoalign on the selected genome based on parameter of the selected journal,fastqc and novoalign
+20/4/2016,8.30-10.30,trying produce a pipeline to run the novoalign to get the bam file with one line,bash script
+20/4/2016,10.30-12.30,test and re-work the pipeline to ensure it work and produce bam as output,terminal and bash script
+20/4/2016,2.30-5.30,produce a pipeline using bash script that run from novoindex to get bam file with include the softlinked file,bash script that include novoindex/novoalign/novosort and samtools
+21/4/2016,8.30-10.30,test the bash script pipeline to ensure it work on large dataset,bash script that include novoindex/novoalign/novosort and samtools
+21/4/2016,10.30-12.30,redone the pipeline to follow all the parameter given based on the journal "Mutation Scanning in Wheat by Exon Capture and Next-Generation Sequencing",bash script that include novoindex/novoalign/novosort and samtools
+21/4/2016,2.30-5.30,testing the novoclinic for any problem or how to use it,novoclinic
+22/4/2016,8.30-10.30,testing the pipeline until the samtools that including conversion,sorting,index and duplicate remover with small dataset,bash script that include novoindex/novoalign/novosort and samtools
+22/4/2016,10.30-12.30,testing the propose pipeline using same data from the journal,bash script that include novoindex/novoalign/novosort and samtools
+22/4/2016,2.30-5.30,testing the novoclinic for any problem or how to use it,novoclinic
+25/4/2016,8.30-10.30,retesting pipeline due to problem arise of missing @SAM header,Samtools 
+25/4/2016,10.30-12.30,retesting pipeline due to problem arise of missing Z5 tags,NOVOSORT
+25/4/2016,2.30-5.30,testing the pipeline until mpileup,bash script that include novoindex/novoalign/novosort and samtools
+26/4/2016,8.30-10.30,testing the pipeline until until can be view with igv,novoindex/novoalign/novosort and samtools
+26/4/2016,10.30-12.30,learning how to see the substitution/deletion and addition using bcftools,bcftools
+26/4/2016,2.30-5.30,learning how to use ART to generate the read sequence,ART
+27/4/2016,9.00-12.30,learning how to use ART and it function in set the benchmarking the sofware,ART 
+27/4/2016,2.30-4.00,Learn and finding ways on how to compare the alignment file to see the different of mapped area and time of execution,ice weasel and samtools
+28/4/2016,8.30-10.30,produce a bash script to produce a read based on illumina HS20 on the ART,ART and bash script
+28/4/2016,10.30-12-30,produce a bash script to generate multiple sam file from novoalign based on the the generate read,novoalign 
+28/4/2016,2.30-5.30,finding the way to get the mapped area vs actual mapped area ,samtool/bamutil and bash script 
+29/4/2016,8.30-10.30,using time -verbose to get the time for each of the time script executed from start to finish,bash script terminal
+29/4/2016,10.30-12.30,install bamUtill to be use as way to compare the sorted bam file,bamutil
+29/4/2016,2.30-5.30,run the bash script to compare the bam file using sorted bam
+3/5/2016,8.30-10.30,data entry for the time and alignment for the novoalign,csv and time--verbose
+3/5/2016,10.30-12.30,finding the actual mapping area of the Sam file,bash script (grep)
+3/5/2016,2.30-5.30,using picardtool to compare the alignment file of the sam file,picard
+4/5/2016,8.30-10.30,plot the graph using R,R
+4/5/2016,10.30-12.30,barplot the x and y for each of the criteria,R
+4/5/2016,2.30-5.30,finding the actual speed of the process of novoalign and testing the novoclinic,novoclinic and iceweasel
+5/5/2016,8.30-12.30,get the result into the barplot and table and put into the rmarkdown file,R and rmarkdown
+5/5/2016,2.30-5.30,learning about picard and PHP to understand their function and how to use,iceweasel
+6/5/2016,8.30-10.30,tune fining the result so it can be easily understand,R and rmarkdown
+6/5/2016,10.30-12.30,presentation of the second project to get feedback,-
+6/5/2016,2.30-5.30,produce 2-3 more result to get the average of the 3 result to ensure it is accurate,bash script
+9/5/2016,8.30-10.30,using bash script to get more result to used as comparision from 1 result,bash script
+9/5/2016,10.30-12.30,tabulate the data in order to easy to easy undersatand and be use in R,libra cal
+9/5/2016,2.30-5.30,get more result of the bash script and learning data manipulation using R,iceweasel and bash script
+10/5/2016,8.30-10.30,get more result to get the average value to validate the result,bash script and R
+10/5/2016,10.30-12.30,use R to manipulate the data for easy to calculate the data,R
+10/5/2016,2.30-5.30,complete the data table by using R to calculate the table,R
+11/5/2016,8.30-10.30,tabulate the average for the five table using R,R
+11/5/2016,10.30-12.30,tabulate the average for the five table using R,R
+11/5/2016,2.30-5.30,fine turning the data collection,bash script and R
+12/5/2016,8.30-12.30,get the data of -t for 110-140 by using -c=1,bash script
+12/5/2016,2.30-5.30,tabulate the data and doing a calculation,R
+13/5/2016,8.30-12.30,get the data for -t 70-100 by using -c=1,bash script and hpc1
+13/5/2016,2.30-5.30,tabulate the data and doing a calculation,R
+16/5/2016,8.30-12.30,finish data and tabulate the data for -t 0-60 by using -c=1,bash and R
+16/5/2016,2.30-5.30,learning how to use qualimap and its function,qualimap
+17/5/2016,-,medical leave,-
+18/5/2016,8.30-10.30,learning function and how to use qualimap,qualimap
+18/5/2016,10.30-12.30,change the format from sam to bam and sort it,samtools
+18/5/2016,2.30-5.30,using qualimap to find the different of the mapping quality and unique mapping of each sam/bam file,qualimap
+19/5/2016,8.30-10.30,get the new sam file for art,ART and bash
+19/5/2016,10.30-12.30,get the new alignment file for -t 0-160 for new fastq created, bash script
+19/5/2016,2.30-5.30,get the qualimap to work in command line to test the new alignment file,qualimap
+20/5/2016,8.30-12.30,get sorted bam file for each of the alignment and ART sam,samtools
+20/5/2016,2.30-5.30,using qualimap to get the alignment read for each of the bam file and compare,qualimap
+23/5/2016,8.30-12.30,tabulate and plot the graph of the qualimap for each of the bam file, R
+23/5/2016,2.30-3.30,presentation about the qualimap result about the mapping area,Rmarkdown
+23/5/2016,3.30-5.30, get new result of novoalign by using the -r for reporting the multimapped.
+24/5/2016,8.30-12.30,convert new result into the bam sorted format,samtools
+24/5/2016,2.30-5.30,get the result into the qualimap and clean the result,qualimap
+25/5/2016,8.30-10.30,get the sam from ART into bam file, samtools
+25/5/2016,10.30-12.30,use novoalign to mapped the bam file into the TAIR10, novoalign
+25/5/2016,2.30-5.30,use mapped bam into the qualimap and looking the intersect with bedtools,qualimap and bedtools
+26/5/2016,8.30-12.30, change the sam file from the art due to mistake during sam to bam conversion,vim and ART
+26/5/2016,2.30-5.30,get the new bam to be mapped again, bash script and samtoools
+27/5/2016,8.30-10.30,produce bedtools intersect for the ART bam and novoalign BAM, bedtools
+27/5/2016,10.30-12.30,produce qualimap for all of the bam sorted file, samtools and qualimap
+27/5/2016,2.30-5.30,understanding the iGV for easy to reading the genome and finding the gap and similarity between function, IGV
