@@ -1,0 +1,33 @@
+Date,Time,Workdone,Toolused
+4/4/2016,8.30-9.00,briefing on the company work it organization,-
+4/4/2016,9.00-12.30,do the background search of thing related to company such as SSH/bash scripting/debian os and ect,iceweasel(google)
+4/4/2016,2.30-3.00,briefing on the task that need to been done for the week,-
+4/4/2016,3.00-5.30,understanding the basic R language and bash scripting, iceweasel(google)
+5/4/2016,8.30-10.00,finding and understanding the syntac of Rmarkdown, iceweasal(google) and getedix
+5/4/2016,10.00-12.30,making the basic markdown script based on the Novocraft wikia house, getedix and markdown preview
+5/4/2016,2.00-5.30,produce an Rscript to parse the HTML to normal text,getedit and R language in terminal.
+6/4/2016,8.30-10.30,create an Rscript to parse the table in HTML,R language in terminal
+6/4/2016,10.30-12.30,combine both of the Rscript to see if it work simultanously, getedix and R language
+6/4/2016,2.30-5.30,try to convert the HTML file to Markdown,Pandoc and R language
+7/4/2016,8.30-10.30,produce basic table for rmarkdown,gedit
+7/4/2016,10.30-12.30,produce rmarkdown script for the daily report using Rmarkdown,gedix and R language
+7/4/2016,2.30-5.30, trying to produce script that convert the html to markdown and to rmarkdown, gedit pandoc and R language 
+8/4/2016,8.30-10.30,produce a Rmarkdown script to been view as slide show,getedit and R language
+8/4/2016,10.30-12.30,learn about the shiny and it usage,iceweasel and shiny
+8/4/2016,2.30-5.30,incorporated shiny within the Rmarkdown, getedit and shiny.
+11/4/2016,8.30-10.00,install pandoc and shinyApp to local pc,terminal
+11/4/2016,10.30-12.30,trying to render the novocraft wikia page into markdown,getedit and pandoc,bash script and pandoc
+11/4/2016,2.30-5.30,produce rscript that enable to do web data mining from password based website, getedix and pandoc
+12/4/2016,8.30-10.30,produce script with shinyApp,shiny and R
+12/4/2016,10.30-12.30,produce html/pdf and slide presentation, Rmarkdown library and shiny
+12/4/2016,2.30-5.30,produce script that enable to wget the url from the novocraft wikia page,bash script and pandoc
+13/4/2016,8.30-10.30,produce a script that create multiple output format of Rmarkdown,getedix and R language
+13/4/2016,10-12.30,trying to produce bash script that wget evething from the website and change it to markdown in i bash script, getedix and terminal
+13/4/2016,2.30-3.00,presentation of the weekly report that produce using Rmarkdown, Rlanguage
+13/4/2016,3.00-5.30,doing background research of novoalign and model plant for next task, iceweasel and novoalign
+14/4/2016,8.30-10.30,reseach on journal that use the novaalign in their research method, iceweasel
+14/4/2016,10.30-12.30,scripting wget and Rscript in one script,getedix and terminal
+14/4/2016,2.30-5.30,understanding basic of perl and the and finding reseach journal contain novoalign based on model plant, iceweasel
+15/4/2016,8.30-10.30,doing basic research of the novoalign and novoindex basic command and manual,novoalign reference manual
+15/4/2016,10.30-12.30,finding research paper that use novoalign on two model organism Zea may and Arabidopsis thaliana, iceweasel 
+15/4/2016,2.30-5.30,get the genome data of the Zea may and Arabidopsis thaliana in GFF format to find the genome details.

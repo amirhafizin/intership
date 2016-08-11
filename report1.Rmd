@@ -1,0 +1,76 @@
+---
+title: " Weekly Report"
+author: "Muhamad Amir Hafizin"
+date: '`r format(Sys.Date(),"%d %B, %Y")`'
+runtime: shiny
+output:
+   html_document:
+toc: true
+theme: united
+---
+
+<!-- above is to decleared the output of file-->
+<!-- # is the header-->
+
+# Learning point
+<!-- *with space is to decleared as bullet-->
+* Introduction to bash
+* Introduction to R
+* Introduction to Markdown and RMarkdown
+* Conversion of RMarkdown to HTML and PDF format 
+* Introduction of Shiny R
+* Introduction of pandoc
+* Introduction of Rmarkdown
+* Basic of scripting in terminal
+
+# Objective
+<!-- ** ** is for the bold while * * is for the italic-->
+Convert our in-house wikia to **Rmarkdown** format and *PDF format*. Upload each of these documents to a GIT repository for access by all Novocraft team members. 
+
+# Expected Outcome:
+
+* A git repository with the in-house wikia  stored in the same folder structure
+* All wikia pages to be converted to RMarkdown
+* RMarkdown to be converted to PDF
+* Rscript to convert wikia pages to RMarkdown and upload to GIT HUB
+* Rmarkdown file that contain the the daily schedule,shiny in the PDF,HTML and Slides
+*
+
+DURATION: ***2 Weeks***
+
+<!---for the table of daily schedule-->
+<!---i using kable to produce table that work with html and pdf format-->
+# Daily Report
+```{r, echo= FALSE, results="asis"}
+tab= read.csv("dailyreport1.csv",header=TRUE)
+knitr::kable(tab)
+```
+
+*****
+
+<!---for the table selected of daily schedule using shiny-->
+```{r,echo = FALSE, include=TRUE}
+library(shiny)
+report <-read.csv("dailyreport1.csv",header=TRUE)
+shinyApp(
+ui <- fluidPage(
+selectInput("Date","Choose Date",
+c(unique(as.character(report$Date)))),
+dataTableOutput("result")
+),
+
+server = function(input,output){
+output$result <- renderDataTable({
+report <- read.csv("dailyreport1.csv",header=TRUE)
+report <- report[report$Date == input$Date,]
+})
+},
+)
+
+```
+
+*****
+
+<!--[]() is how to link the website to the citation-->
+## The link to [Novocraft wikia](http://dev.novocraft.com/trac/trac_backup/wiki) house and [Novocraft website](http://www.novocraft.com/)
+
