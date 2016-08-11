@@ -1,0 +1,275 @@
+---
+title: " Novoalign Testing Report"
+author: "Muhamad Amir Hafizin"
+date: '`r format(Sys.Date(),"%d %B, %Y")`'
+output:
+   ioslides_presentation:
+html_document:
+theme: united
+---
+
+
+# NOVOALIGN = using the genome indexing tools
+
+# BWA = using BWT(Burrows-Wheeler Transform)
+
+## TABLE FOR EACH CHROMOSOME 
+### NOVA LINES (NOVO T-154)
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/novoeachchr.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+### NOVA PERCENT (NOVO T-154)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/novoeachchrpercent.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+-----
+
+### BWA LINES (BWA I-7)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/bwaeachchr.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+
+### BWA PERCENT (BWA I-7)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/bwaeachchrpercent.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+-----
+
+### Comparision between NOVO and BWA In percentage based on full Genome
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/percent.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+----
+
+
+### Comparision between NOVO(N) and BWA(B) in percentage based on each Chromosome
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chrpercent.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+----
+
+### Comparision between BWA and multiple Novo in number of Lines
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/all.csv",header=FALSE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+### Comparision between BWA and multiple Novo (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/allpercent.csv",header=FALSE)
+library("knitr")
+kable(tab)
+```
+
+-----
+
+### Comparision between BWA and multiple Novo Full (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/full.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/fullg.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main=" MAPPED FULL (percent) VS Threshold/missmatch",ylab="Percent Full",xlab="Threshold/missmatch",border="red",ylim=c(0,100))
+```
+
+*****
+
+### Comparision between BWA and multiple Novo PT (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/pt.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/ptg.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main=" MAPPED PT (percent) VS Threshold/missmatch",ylab="Percent PT",xlab="Threshold/missmatch",border="red",ylim=c(0,100))
+```
+
+*****
+
+### Comparision between BWA and multiple Novo MT (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/mt.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/mtg.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main=" MAPPED MT (percent) VS Threshold/missmatch",ylab="Percent MT",xlab="Threshold/missmatch",border="red",ylim=c(0,100))
+```
+
+*****
+
+### Comparision between BWA and multiple Novo CHR1 (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr1.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr1g.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main=" MAPPED CHR1 (percent) VS Threshold/missmatch",ylab="Percent CHR1",xlab="Threshold/missmatch",border="red",ylim=c(0,100))
+```
+
+*****
+
+### Comparision between BWA and multiple Novo CHR2 (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr2.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr2g.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main=" MAPPED CHR2 (percent) VS Threshold/missmatch",ylab="Percent CHR2",xlab="Threshold/missmatch",border="red",ylim=c(0,100))
+```
+
+*****
+
+### Comparision between BWA and multiple Novo CHR3 (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr3.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr3g.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main=" MAPPED CHR3 (percent) VS Threshold/missmatch",ylab="Percent CHR3",xlab="Threshold/missmatch",border="red",ylim=c(0,100))
+```
+
+*****
+
+### Comparision between BWA and multiple Novo CHR4 (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr4.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr4g.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main=" MAPPED CHR4 (percent) VS Threshold/missmatch",ylab="Percent CHR4",xlab="Threshold/missmatch",border="red",ylim=c(0,100))
+```
+
+*****
+
+### Comparision between BWA and multiple Novo CHR5 (Percent)
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr5.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/chr5g.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main=" MAPPED CHR5 (percent) VS Threshold/missmatch",ylab="Percent ",xlab="Threshold/missmatch",border="red",ylim=c(0,100))
+```
+
+*****
+
+### VennDiagram
+##### the acceptable basepair location based on the merge with ART (No of LINES)
+
+```{r,echo= FALSE, results="asis"}
+library("VennDiagram")
+venn.plot <- draw.pairwise.venn(11676041,11672372,11576099,c("novo","BWA"),scaled=FALSE)
+```
+
+*****
+
+##### the percentage of the accetable basepair location
+
+```{r,echo= FALSE, results="asis"}
+library("VennDiagram")
+venn.plot <- draw.pairwise.venn(97.73,97.70,96.9,c("novo","BWA"),scaled=FALSE)
+```
+
+*****
+
+
+##### the acceptable basepair location based on the merge with ART (No of LINES)
+
+```{r,echo= FALSE, results="asis"}
+library("VennDiagram")
+venn.plot <- draw.pairwise.venn(11287984,11672191,11191893,c("novo","BWA"),scaled=FALSE)
+```
+
+******
+
+
+##### the percentage of the accetable basepair location
+
+```{r,echo= FALSE, results="asis"}
+library("VennDiagram")
+venn.plot <- draw.pairwise.venn(94.48,97.70,93.68,c("novo","BWA"),scaled=FALSE)
+```
+
+
+
+
