@@ -1,0 +1,18 @@
+Aligner,novo,bwa,novo,bwa
+type,lines,line,percent,percent
+original ART,11946893,11946893,100,100
+aligner,11946770,11944210,99.999,99.978
+Unmapped from ART,123,2683,0,0.02
+different chromosome than ART,100459,101107,0.841,0.846
+start and stop basepair location >50,85088,85166,0.712,0.713
+start and stop basepairs location <50,85182,85565,0.713,0.716
+basepairs location within acceptable range,11676041,11672372,97.733,97.702
+start=0 stop=0,11287984,11672191,96.675,99.998
+start >0 stop=0,1,21,0,0
+start <0 stop=0,192893,36,16.52,0
+start=0 stop>0,192462,33,16.483,0
+start=0 stop<0,5,16,0,0
+start>0 stop>0,22,38,0,0
+start<0 stop<0,36,37,0,0
+start>0 stop<0,0,0,0,0
+start<0 stop>0,2638,0,0.226,0

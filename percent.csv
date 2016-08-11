@@ -1,0 +1,6 @@
+type ,90,100,110,154,bwa7
+mapped according to ART,99.98,99.99,100,100,100
+different chromosome than ART,0.84,0.84,0.84,0.84,0.85
+Start and stop basepaired location> 50,0.71,0.71,0.71,0.71,0.71
+Start and stop basepaired location  <50,0.71,0.71,0.71,0.71,0.72
+The same basepair location as the ART,94.48,94.48,94.48,94.48,97.7

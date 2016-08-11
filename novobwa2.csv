@@ -1,0 +1,3 @@
+aligner ,original ART,aligner,unmapped basepair ,mapped basepair,different chromosome than ART,start and stop basepair location >50,start and stop basepairs location <50,basepair location within acceptable range
+novo,11946893,11946770,123,11946770,100459,85088,85182,11676041
+bwa,11946893,11944210,2683,11944210,101107,85166,85565,11672372

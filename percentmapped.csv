@@ -1,0 +1,3 @@
+Aligner ,Mapped,unmapped,different chromosome than ART,start and stop basepairs location >50,start and stop basepairs location <50,basepair within the acceptable range 
+novo,99.999,0,0.84,0.712,0.713,97.734
+bwa,99.978,0.02,0.846,0.713,0.716,97.972

@@ -1,0 +1,6 @@
+NOVOALIGN,pt,mt,chr1,chr2,chr3,chr4,chr5
+MAPPED according to ART,99.611,68.487,99.348,98.735,99.335,99.339,99.389
+Start & stop basepairs location >50,8.277,1.058,1.063,0.348,0.483,0.66,0.778
+Start & Stop basepair location <50,8.07,1.18,1.063,0.349,0.484,0.651,0.779
+basepair that within the acceptable range,83.264,66.25,97.228,98.038,98.368,98.028,97.832
+the basepairs location same as ART,96.803,96.729,96.677,96.689,96.677,96.665,94.577

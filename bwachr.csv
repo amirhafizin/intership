@@ -1,0 +1,2 @@
+Aligner ,The basepair location within acceptable range in ART,start=0 stop=0,start >0 stop=0,start <0 stop=0,start=0 stop>0,start=0 stop<0,start>0 stop>0,start<0 stop<0,start>0 stop<0,start<0 stop>0
+bwa,11672372,11672191,21,36,33,16,38,37,0,0

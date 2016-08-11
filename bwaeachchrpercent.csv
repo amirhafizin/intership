@@ -1,0 +1,6 @@
+BWA,pt,mt,chr1,chr2,chr3,chr4,chr5
+Mapped according to ART,99.605,69.3459,99.32,98.697,99.312,99.304,99.361
+Start and stop basepair location >50,8.277,1.033,1.056,0.349,0.489,0.661,0.776
+Start  and Stop basepair location <50,8.323,1.098,1.06,0.354,0.487,0.654,0.787
+Basepairs location that within the acceptable range,83.005,67.214,97.204,97.994,98.336,97.991,97.798
+The basepaired location that same as ART,83.005,99.996,99.998,99.999,99.998,99.999,99.999

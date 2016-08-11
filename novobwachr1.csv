@@ -1,0 +1,12 @@
+Aligner ,novo,bwa
+type,lines,line
+basepair location within acceptable range,11676041,11672372
+start=0 stop=0,11287984,11672191
+start >0 stop=0,1,21
+start <0 stop=0,192893,36
+start=0 stop>0,192462,33
+start=0 stop<0,5,16
+start>0 stop>0,22,38
+start<0 stop<0,36,37
+start>0 stop<0,0,0
+start<0 stop>0,2638,0

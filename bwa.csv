@@ -1,0 +1,16 @@
+type,lines,percents
+art,11946893,100
+bwa aligner,11944210,99.978
+different chromosome than ART,101107,0.846
+Start and Stop basepaired location >50,85166,0.713
+Start and stop basepaired location <50,85565,0.716
+basepair location that within acceptable range,11672372,97.972
+Start=0 stop=0,11672191,99.998
+Start>0 stop=0,21,0
+Start<0 stop=0,36,0
+Start=0 stop>0,33,0
+Start=0 stop<0,16,0
+Start>0 stop>0,38,0
+Start<0 stop<0,37,0
+Start>0 stop<0,0,0
+Start<0 stop>0,0,0

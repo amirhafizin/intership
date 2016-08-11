@@ -1,0 +1,3 @@
+Aligner ,basepair location within the acceptable range,start=0 stop=0,start >0 stop=0,start <0 stop=0,start=0 stop>0,start=0 stop<0,start>0 stop>0,start<0 stop<0,start>0 stop<0,start<0 stop>0
+novo,11676041,11287984,1,192893,192462,5,22,36,0,2638
+bwa,11672372,11672191,21,36,33,16,38,37,0,0

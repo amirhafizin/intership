@@ -1,0 +1,3 @@
+"Aligner ","good chromosome","start=0 stop=0","start >0 stop=0","start <0 stop=0","start=0 stop>0","start=0 stop<0","start>0 stop>0","start<0 stop<0","start>0 stop<0","start<0 stop>0"
+novo,97.734,96.675,0,16.52,16.483,0,0,0,0,0.226
+bwa,97.972,99.998,0,0,0,0,0,0,0,0
