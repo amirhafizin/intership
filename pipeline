@@ -1,0 +1,9 @@
+/export/latestBin/novoindex /export/home/amirh/genome_dataset/mutation_scanning/input/indexq.idx /export/home/amirh/genome_dataset/mutation_scanning/input/index/Triticum_aestivum.IWGSC1+popseq.31.dna.genome.fa 
+
+/export/latestBin//samtools faidx /export/home/amirh/genome_dataset/mutation_scanning/input/index/Triticum_aestivum.IWGSC1+popseq.31.dna.genome.fa 
+
+/export/latestBin/novoalign -t 60 -d /export/home/amirh/genome_dataset/mutation_scanning/input/indexq.idx -f /export/home/amirh/genome_dataset/mutation_scanning/input/fastq/1_1.fastq /export/home/amirh/genome_dataset/mutation_scanning/input/fastq/1_2.fastq -o SAM \
+| /export/latestBin//samtools view -uS -h - | /export/latestBin//samtools sort  - | /export/latestBin//samtools index -b - | /export/latestBin//samtools rmdup -S - - |
+ /export/latestBin//samtools mpileup -u -t DP -q 20 -A -f /export/home/amirh/genome_dataset/mutation_scanning/input/index/Triticum_aestivum.IWGSC1+popseq.31.dna.genome.fa - | /export/latestBin//bcftools view -vc - > raw.vcf  
+
+
