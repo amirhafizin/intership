@@ -1,0 +1,143 @@
+---
+title: " Novoalign Testing Report"
+author: "Muhamad Amir Hafizin"
+date: '`r format(Sys.Date(),"%d %B, %Y")`'
+output:
+   ioslides_presentation:
+pdf_document:
+html_document:
+theme: united
+---
+
+# Introduction
+
+*****
+
+* Basic info about the table
+	+ NOVOALIGN = using the genome indexing tools
+	+ BWA = using BWT(Burrows-Wheeler Transform)
+	+ The table show the comparision the number of mapped region based based calculate the number of lines based on SAM file from ART
+	+ The comparision was done by merge the SAM file from the ART with the Aligner SAM file by using perl based on the same basepair ID.
+	+ The the number lines is find the calculate the number of Basepair ID that. 1 basepair ID = 1 lines
+	+ The percent is calculate based on the SAM file from ART (it mapped 100%)
+	+ The unmapped from ART meaning the aligner has not been able to mapped that region/basepair to the reference sequence
+	+ The different chromosome meaning that the aligner has mapped to the diffrent chromosome than the SAM file from ART (based on the same basepair ID)
+	+ The start and stop position for above 50 or below -50 meaning the aligner has mapped outside the acceptable range based on the length of basepair been stimulate from ART(100bp)
+	+ The basepair that within the acceptable range meaning the aligner has mapped within the the acceptable range of basepair range based on the length of basepairs (100bp)
+	+ The basepair that have start and stop position exectly 0 meaning the aligner has mapped exectly same as ART 
+
+*****
+
+### ART vs Novoalign
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/novamapped.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+### ART vs BWA
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/bwa.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+
+### NOVO vs BWA
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/novoandbwa1.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+### NOVOALIGN and BWA MAPPED 
+
+#### Novo
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/novomapl.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+#### BWA
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/bwamapl.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+#### NOVO AND BWA
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/novobwa2.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+#### NOVOALIGN and BWA MAPPED PERCENTAGE
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/percentmapped.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+### NOVOALIGN and BWA MAPPED CHROMOSOEM
+#### Novo
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/novochrl.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+#### BWA
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/bwachr.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+#### NOVO AND BWA
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/novobwa2.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+#### NOVOALIGN and BWA MAPPED CHROMOSOME PERCENTAGE
+
+```{r,echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/bedtool/cigar/bwanovo/percentchr.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+

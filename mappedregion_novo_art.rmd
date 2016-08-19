@@ -1,0 +1,193 @@
+---
+title: " Novoalign Testing Report"
+author: "Muhamad Amir Hafizin"
+date: '`r format(Sys.Date(),"%d %B, %Y")`'
+output:
+   slidy_presentation:
+html_document:
+theme: united
+---
+
+# BASIC COMMAND
+* Reference Gene: Arabidopsis thaliana.TAIR10
+	+ 119,146,348 bp
+	+ 121.7 MB -> 2.6 GB
+
+* Build using the ART
+* Using time -verbose
+* Cite 
+	+ Hatem A., Bozdag D., Toland A.E., Catalyurek U.V.Benchmarking short sequence mapping tools. BMC Bioinform. 2013;14:184.
+	+ Thole J.M., Beisner E.R., Liu J., Venkova S.V., Strader L.C. Abscisic acid regulates root elongation through the activities of auxin and ethylene in Arabidopsis thaliana. G3 (Bethesda) 2014;4:1259–1274. doi: 10.1534/g3.114.011080
+
+******
+
+## ART
+* ART is use to produce a simulated fastq and SAM file from the reference sequence by emulating the sequencing process  either illumina,ART-454 or SOLiD.
+* The coding for Building is: 
+	+ art_illumina -ss HS20 -sam -i refseq  -l 100 -f 10 -o ilumina
+		+ "-ss"  = The name of Illumina sequencing system of the built-in profile used for simulation
+		+ "HS20" = sequencing system ID names for HiSeq 2000 (100bp)
+		+ "sam"  = indicate to generate SAM alignment file
+		+ "i"    = the filename of input DNA/RNA reference
+		+ "l"    = the length of reads to be simulated
+		+ "f"    = the fold of read coverage to be simulated or number of reads/read pairs generated for each amplicon
+		+ "o"    = the prefix of output filename
+
+*****
+
+## NOVOINDEX
+* Novoindex is use to index the target reference sequence before the the alignment is done.
+* The coding use
+	+ novoindex thaliana.idx Arabidopsis thaliana.TAIR10.fa
+		+ The option of the NovoIndex is been left as default(the option is default is as below suggested)  		
+		+ k = 11
+		+ s = 1
+
+******
+
+## NOVOALIGN
+* The coding use 
+	+ The NovoAlign is the In-house Aligner that were use to mapped the fastq sequence file with the reference sequence.
+	+ Novoalign -c 5 -t 10 -f ilumina.fq -d thaliana.idx -o SAM 2> novoalign.stderr > parameter.sam
+		+ "c" =  Sets  number of threads to use.
+		+ "t" =  Sets the maximum alignment score acceptable for the best alignment. 
+		+ "d" =  Full pathname of indexed reference sequence created by novoindex
+		+ "o" =  Specifies the report name and format
+
+
+*****
+
+* The basic infomation of the result
+	+ Elapsedtime = time from start to finish the process based on the real time.
+	+ time user = the amount of CPU time used when execute the process only.(outside kernel){user mode}
+	+ time system = the amount of CPU time used when execute the process include the other process(within the kernel){kernel mode}
+	+ CPU percent =  the amount of percentage of CPU core been used 
+	+ Unique aligment = the mapped region that been mapped only to that location
+	+ Multimapped = the mappped region that been mapped multiple time
+	+ No Mapping = the region that been unmapped.
+
+*****
+
+# Table
+```{r, echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/test/average.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+# Graph
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/average1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main="Time(Multithreading/c=5) VS Threshold(-t)",ylab="Time(min)",xlab="Threshold(-t)",border="red",ylim=c(0,12))
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/try.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main="Time(c=1/CPU=82%) VS Threshold(-t)",ylab="Time(min)",xlab="Threshold(-t)",border="red",ylim=c(0,100))
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/average1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,4],main="CPU percent(-c5) VS Threshold(-t)",ylab="CPU percent(%)",xlab="Threshold(-t)",border="red",ylim=c(400,500))
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/average1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,8],main="Unique Alignment VS Threshold(-t)",ylab="No of Alignment",xlab="Threshold(-t)",border="red")
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/average1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,10],main="Multi Mapped VS Threshold(-t)",ylab="No of Alignment",xlab="Threshold(-t)",border="red")
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/average1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,12],main="No mapping VS Threshold(-t)",ylab="No Of Alignment",xlab="Threshold(-t)",border="red")
+```
+
+*****
+# Table
+## Based on the Qualimap (QC for the Mapped region)
+* Basic Information
+	+ mapped read = the basepair that been align/mapped according to the Novoalign log file.
+	+ unmapped read = the basepair that has not been align/mapped accoridng to Novoalign log file
+	+ inside region = region of interest based on the reference sequence
+	+ outside region = outside of region of interest based on the reference sequence
+	+ mapped read (inside region) = the basepair that been align/mapped according to qualimap
+	+ mean mappin (inside region) = the mean mapping quality of the mapped reads
+	+ standard deviation (inside region) = S.D of the mapped reads 
+	+ general error (inside region) = ratio of total collected edit distance to the number of mapped bases
+	+ mismatches (inside region) = wrong mapped number of start or stop position when mapped the fastq based on reference sequence
+	+ insertion (inside region) = the different nucleotide composition from the reference sequence that has more basepaird
+	+ deletion (inside region) = the different nucleotide composition from the reference sequence tha has less basepair
+	+ mapped read (outside region) =  the basepair that been align/mapped according to qualimap
+	+ mean mappin (outside region) = the mean mapping quality of the mapped reads
+	+ standard deviation (outside region) = S.D of the mapped reads
+	+ general error (outside region) = ratio of total collected edit distance to the number of mapped bases
+	+ mismatches (outside region) = wrong mapped number of start or stop position when mapped the fastq based on reference sequence
+	+ insertion (outside region) = the different nucleotide composition from the reference sequence that has more basepaird
+	+ deletion (outside region) = the different nucleotide composition from the reference sequence tha has less basepair
+
+******
+
+```{r, echo= FALSE, results="asis"}
+tab= read.csv("/export/home/amirh/novoalign_testing/test/align.csv",header=TRUE)
+library("knitr")
+kable(tab)
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/align1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,1],main="mapped region VS Threshold(-t)",ylab="No of Alignment(%)",xlab="Threshold(-t)",border="red")
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/align1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,2],main="Unmapped region VS Threshold(-t)",ylab="MultiMapped(%)",xlab="Threshold(-t)",border="red")
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/align1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,3],main="mapping inside region VS Threshold(-t)",ylab="No of Alignment(%)",xlab="Threshold(-t)",border="red")
+```
+
+*****
+
+```{r, echo= FALSE, results="asis"}
+x<-read.csv("/export/home/amirh/novoalign_testing/test/align1.csv",sep=",",header=TRUE,stringsAsFactors = TRUE)
+d<-t(x)
+barplot(d[,4],main="mapping outside region VS Threshold(-t)",ylab="No of Alignment(%)",xlab="Threshold(-t)",border="red")
+```
+
+*****
+
+# Total Read sequence = 11947007
+
